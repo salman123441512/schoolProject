@@ -1,0 +1,38 @@
+
+{{>headers}}
+
+  <title>Educenter | Update</title>
+</head>
+
+<body>
+  
+{{>navbar}}
+
+<!-- contact -->
+<section class="section bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="section-title">Update Details</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 mb-4 mb-lg-0">
+        {{!-- {{#if show}}
+         <p class="text-success">Thanks to Share Your Query With us !! Our Team Will Contact with You Soon.</p>
+        {{/if}} --}}
+        <form action="/edit/{{data._id}}" method="post">
+          <input type="text"  class="form-control mb-3" id="name" name="name" placeholder="Your Name"  required value="{{data.name}}">
+          <input type="email" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email" required value="{{data.mail}}">
+          <input type="text" class="form-control mb-3" id="phone" name="phone" placeholder="Your Phone" required value="{{data.phone}}">
+          <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject" required value="{{data.subject}}">
+          <textarea name="message" id="message" class="form-control mb-3" placeholder="Your Message" required value="{{data.message}}"></textarea>
+          <button type="submit"  class="btn btn-primary">Update Details</button>
+        </form>
+      </div>
+     
+</section>
+<!-- /gmap -->
+
+
+ {{>footer}}

@@ -1,0 +1,49 @@
+{{>headers}}
+<title>Students | Record</title>
+</head>
+
+<body>
+    {{>navbar}}
+    <section class="section ">
+        <div class="container-fluid my-3 mt-5">
+
+           <form class="d-flex" role="search" action="/search" method="get">
+                <h2 class="background text-light ">Students Record</h2>
+                <input class="form-control mt-4" type="search" name="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success mt-4 mb-3" type="submit">Search</button>
+            </form>
+            <div class="table-responsive">
+                 
+                <table class="table table-bordered table-hover table-striped table-dark">
+                    <thead class="text-center ">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Subject</th>
+                            <th>Message</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# each data}}
+                        <tr>
+                            <td>{{_id}}</td>
+                            <td>{{name}}</td>
+                            <td><a href="mailto:{{mail}}">{{mail}}</a></td>
+                            <td><a href="tel:{{phone}}">{{phone}}</a></td>
+                            <td>{{subject}}</td>
+                            <td>{{message}}</td>
+                            <td><a href="/edit/{{_id}}"><span class="material-symbols-outlined">edit</span></a></td>
+                            <td><a href="/delete/{{_id}}"><span class="material-symbols-outlined ">delete</span></a>
+                            </td>
+                        </tr>
+                        {{/ each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    {{>footer}}
